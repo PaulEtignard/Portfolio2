@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class Projet{
+-Nom string not null
+-slug string not null
+-Language langage
+-Déscription text not null
+- Difficulté float not null
+-createdAt datetime not null
+-dateFin datetime null
+}
+
+
+Class Language{
+-nom string not null
+-description string null
+-Maitrise float not null
+}
+
+Language "1..*"--"0..*"Projet
+@enduml
