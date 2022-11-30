@@ -38,7 +38,17 @@ class Porjet extends Fixture
                 ->setSlug($this->slugger->slug($Projet->getNom()));
 
             $nblangage = $faker->numberBetween(1,3);
-            $Projet->addLanguage($this->getReference("langage".$faker->numberBetween(1,14)));
+            if ($nblangage == 1){
+                $Projet->addLanguage($this->getReference("langage".$faker->numberBetween(1,14)));
+            } elseif ($nblangage == 2){
+                $Projet->addLanguage($this->getReference("langage".$faker->numberBetween(1,14)));
+                $Projet->addLanguage($this->getReference("langage".$faker->numberBetween(1,14)));
+            } elseif ($nblangage == 3){
+                $Projet->addLanguage($this->getReference("langage".$faker->numberBetween(1,14)));
+                $Projet->addLanguage($this->getReference("langage".$faker->numberBetween(1,14)));
+                $Projet->addLanguage($this->getReference("langage".$faker->numberBetween(1,14)));
+            }
+
             $manager->persist($Projet);
         }
 
