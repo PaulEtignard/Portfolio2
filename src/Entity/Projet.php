@@ -22,7 +22,7 @@ class Projet
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\ManyToMany(targetEntity: language::class, inversedBy: 'projets')]
+    #[ORM\ManyToMany(targetEntity: Language::class, inversedBy: 'projets')]
     private Collection $Language;
 
     #[ORM\Column(type: Types::TEXT)]

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{projet.nom}}{% endblock %}
+
+{% block body %}
+
+
+<div class="card mt-4">
+    <div class="card-header">
+        {{ projet.nom }}
+    </div>
+    <div class="card-body">
+        {% for langage in projet.language %}
+            <span class="badge bg-secondary"><a href="{{ path('app_langage_slug', {'slug': langage.nom}) }}">{{ langage.nom }}</a></span>
+        {% endfor %}
+        <p class="card-text mt-3">{{ projet.description }}</p>
+        Difficulté :
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{ projet.difficulté  * 10}}%" aria-valuenow="{{ projet.difficulté }}" aria-valuemin="0" aria-valuemax="10"></div>
+        </div>
+
+    </div>
+
+</div>
+<a href="{{ path('app_projets') }}" class="btn btn-primary mt-3">Retour a la liste des Projets</a>
+{% endblock %}

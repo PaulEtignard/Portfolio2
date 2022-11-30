@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Langages{% endblock %}
+
+{% block body %}
+<h1>Liste des Langage + ou - maitrisé :</h1>
+
+    {% for langage in langages%}
+        <div class="card mt-4">
+            <div class="card-header">
+               <h3>{{ langage.nom }}</h3>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    Désciption:
+                    {%if langage.description is not empty %}
+                    <p>{{ langage.description }}</p>
+                    {% endif %}
+                    <footer class="blockquote-footer">
+                        Maitrise :
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: {{ langage.maitrise *10 }}%" aria-valuenow="{{ langage.maitrise }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </footer>
+                    <a class="btn" href="{{ path('app_langage_slug', {'slug': langage.nom}) }}">Detail</a>
+                </blockquote>
+            </div>
+        </div>
+
+    {% endfor %}
+{% endblock %}

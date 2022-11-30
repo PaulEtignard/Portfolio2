@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma Formation{% endblock %}
+
+{% block body %}
+
+<div class="d-flex align-items-center justify-content-between">
+    <H1 class="mt-3">Ma formation</H1>
+    <a class="btn mt-3" href="{{ path('app_langages') }}">Afficher la liste des langages</a>
+</div>
+
+<h2>BTS SIO Option SLAM</h2>
+<h4 class="fst-italic">BTS Service Informatique au Organisation Option Solution Logiciel et Application Métiers</h4>
+
+<p>Au cours de mes deux ans de BTS SIO, de nombreux projets m'ont été proposés. À réaliser seul où a plusieurs, avec plusieurs types de technologies à utiliser, dans le but d'appliquer et de mettre pratique les connaissances que nous avons pu aquérir tout le long de ces deux années de formation</p>
+    <p>les projets ont été effectué dans deux matières différentes :</p>
+    <ul>
+        <li>Developpement</li>
+        <li>Cybersecurité</li>
+    </ul>
+<h5>Voici donc une liste des projet effectué : </h5>
+
+
+
+
+
+{% for projet in projets %}
+
+
+
+    <div class="card mt-4">
+        <div class="card-header">
+            {{ projet.nom }}
+        </div>
+        <div class="card-body">
+            {% for langage in projet.language %}
+                <span class="badge bg-secondary"><a href="{{ path('app_langage_slug', {'slug': langage.nom}) }}">{{ langage.nom }}</a></span>
+            {% endfor %}
+            <p class="card-text mt-3">{{ projet.description }}</p>
+            Difficulté :
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: {{ projet.difficulté  * 10}}%" aria-valuenow="{{ projet.difficulté }}" aria-valuemin="0" aria-valuemax="10"></div>
+            </div>
+            <a href="{{ path('app_projet_slug', {'slug': projet.slug}) }}" class="btn btn-primary mt-3">Voir le détail</a>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
