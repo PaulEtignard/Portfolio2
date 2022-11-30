@@ -29,7 +29,7 @@ class Projet
     private ?string $description = null;
 
     #[ORM\Column]
-    private ?float $difficulté = null;
+    private ?float $difficulte = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $createdAt = null;
@@ -107,14 +107,14 @@ class Projet
         return $this;
     }
 
-    public function getDifficulté(): ?float
+    public function getDifficulte(): ?float
     {
-        return $this->difficulté;
+        return $this->difficulte;
     }
 
-    public function setDifficulté(float $difficulté): self
+    public function setDifficulte(float $difficulte): self
     {
-        $this->difficulté = $difficulté;
+        $this->difficulte = $difficulte;
 
         return $this;
     }

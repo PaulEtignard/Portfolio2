@@ -34,7 +34,7 @@ class Porjet extends Fixture
                 $dateFin = $faker->dateTimeBetween($Projet->getCreatedAt(),'now');
             }
             $Projet->setDateFin($dateFin)
-                ->setDifficulté($faker->randomFloat(1,1,10))
+                ->setDifficulte($faker->randomFloat(1,1,10))
                 ->setSlug($this->slugger->slug($Projet->getNom()));
 
             $nblangage = $faker->numberBetween(1,3);
