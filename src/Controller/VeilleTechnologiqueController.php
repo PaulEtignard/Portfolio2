@@ -33,6 +33,7 @@ class VeilleTechnologiqueController extends AbstractController
         $result = $feedIo->read("https://news.google.com/rss/search?q=".$recherche);
         $content = $result->getFeed();
 
+
         return $this->render('veille_technologique/Actualite.html.twig', [
             'Data'=> $content,
             'NomRecherche'=>$recherche,
