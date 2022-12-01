@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid ">
         <a class="navbar-brand" href="">FC Tourisme</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -11,6 +11,15 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ path('app_projets') }}">Ma Formation</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">Veille Technologique</a>
+                    <div class="dropdown-menu " style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 42px);" data-popper-placement="bottom-start">
+                        <a class="dropdown-item" href="{{ path('app_veille_technologique') }}">Veille Technologique</a>
+                        <a class="dropdown-item" href="{{ path('app_veille_technologique_nvidia') }}">Actualié sur Nvidia</a>
+                        <a class="dropdown-item" href="{{ path('app_veille_technologique_IA') }}">Actualié sur les IA</a>
+
+                    </div>
                 </li>
             </ul>
         </div>

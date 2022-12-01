@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acualité de {{ NomRecherche }} {% endblock %}
+
+{% block body %}
+
+    {% for item in Data %}
+        <h1 class="mt-2">Actualité de {{ NomRecherche }} : </h1>
+        <div class="container text-center">
+            <div class="row row-cols-auto">
+                {% for item in Data %}
+                    <div class="col">
+                        <div class="card mt-4" style="width: 25rem; height: auto">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                {% if item.LastModified | date_modify('+1 day')> now %}
+                                <p class="badge text-danger">Nouveau</p>
+                                {% endif %}
+                                <h5 class="card-title">{{ item.title }}</h5>
+                                <p class="fst-italic">{{ item.LastModified | date('d/m/Y') }}</p>
+                                <div class="d-flex justify-content-end">
+                                    <a class="btn "
+                                       href="{{ item.link }}">Voir
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             fill="currentColor"
+                                             class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Veille tehcnologique{% endblock %}
+
+{% block body %}
+
+
+    <H1 class="mt-3">Veille Technologique</H1>
+
+    <h2>Qu'est ce que la veille technologique ?</h2>
+    <p>La veille technologique, élément de la veille stratégique, consiste à surveiller les évolutions techniques, les
+        innovations dans un secteur d’activité donnée. La veille technologique comprend notamment la surveillance, la
+        collecte, le partage et la diffusion d’information permettant d’anticiper ou de s’informer sur des changements
+        en matière de recherche, développement, brevet, lancement de nouveaux produits, matériaux, processus, concepts,
+        innovation de fabrication, etc…. Cela a pour but d’évaluer l’impact sur l’environnement et l’organisation.</p>
+    <h2>Pourquoi faire de la veille en BTS ? </h2>
+    <p>En BTS SIO, il nous fortement conseillé de rester informé sur les dernières technologies, afin de ne pas être
+        dépassé
+        par les nouvelles technologies, qui évoluent de jours en jours</p>
+    <h2>Quel outils utiliser pour faire de la veille technologique ?</h2>
+
+    <p>Un grand nombre de logiciel / site web sont a notre disposition pour rechercher et traiter les informations.
+        actuelement j'utilise Feedly, Netvibes, Feedreader ainsi que mon Portfolio (qui, en réalité, utilise google
+        news)</p>
+
+    <h2>Comment recuperer des donnée depuis un site vers un autre ? </h2>
+    Les logiciel cité plus haut, utilise un flux rss. cela signifie que certain sites génère un fichier, avec un format
+    stadard comme XML. Ce format permet une uniformité et permet a tout les application d'utilisé les informations.
+    Dans ces flux rss, les site émeteurs mette les donnée importante. par exemple, sur Google News, on met des mots clef
+    , et le site recherche les sites qui emmetente des flux rss bien rempli.
+    Les application que j'utilise ne sont pas des émeteur, ils sont fait pour traiter les données, et me transmettre les
+    plus importante/pertinante, car en réalité, une minorité des articles posté sur internet sont utile, la grande majorité ne sont que des avis subjectif ou des critiques.
+    Dans mon portfolio, les résultat des recherches Google news sont ne sont pas trié par pertinence, elle ne sont donc
+    la que pour de donnée une idée des articles qui ont été posté.
+    <br>
+    <p>Actuellement, mes recherches sont ciblé sur les IA, ainsi que sur Nvidia, qui font des progès technologiques
+        nottament grace a leurs cartes graphiques</p>
+
+    <H5>Dans mon portfolio, vous pouvez trouver les dernière activités de la toile, sur ces sujets : </H5>
+    <div class="d-flex">
+        <a class="btn btn-primary me-4" href="{{ path("app_veille_technologique_nvidia") }}">Actualité sur Nvidia</a>
+        <a class="btn btn-primary me-4" href="{{ path("app_veille_technologique_IA") }}">Actualité sur les IA</a>
+
+    </div>
+
+
+
+
+{% endblock %}
